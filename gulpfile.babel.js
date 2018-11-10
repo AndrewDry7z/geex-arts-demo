@@ -7,7 +7,8 @@ var gulp = require('gulp'),
     imagemin = require('gulp-imagemin'),
     pngquant = require('imagemin-pngquant'),
     cache = require('gulp-cache'),
-    autoprefixer = require('autoprefixer');
+    autoprefixer = require('autoprefixer'),
+    connect = require('gulp-connect');
 
 var paths = {
     mainSCSS: 'src/scss/main.scss',
@@ -62,3 +63,7 @@ gulp.task('watch-img', function () {
     gulp.watch(paths.images, ['img']);
 });
 gulp.task('images-compress', ['img', 'watch-img']);
+
+gulp.task('connect', function() {
+    connect.server();
+});
