@@ -1,3 +1,8 @@
-div {
-  display: block;
+//Fonts include
+@import "../../assets/fonts/FuturaPT/stylesheet.scss";
+@import "../../assets/fonts/SofiaPro/stylesheet.scss";
+
+
+body {
+  font-family: 'Sofia Pro';
 }
