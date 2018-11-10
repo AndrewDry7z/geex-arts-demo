@@ -7,3 +7,46 @@ body {
   font-family: 'Sofia Pro';
   text-transform: uppercase;
 }
+
+a {
+  color: #0b0b0b;
+  text-decoration: none;
+}
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  &__menu {
+    width: 46%;
+    &-list {
+      li {
+        display: inline;
+        list-style-type: none;
+        margin: 15px;
+        letter-spacing: 2px;
+        a {
+          font-size: 12px;
+          &:hover {
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+  &__rightpart {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+    padding-right: 40px;
+    &-cart {
+      span {
+        border: 1px solid black;
+        border-radius: 100%;
+        padding: 5px 11px;
+        margin-left: 10px;
+      }
+    }
+  }
+}
