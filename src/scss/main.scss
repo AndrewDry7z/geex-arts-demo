@@ -2,6 +2,7 @@
 @import "../../assets/fonts/FuturaPT/stylesheet.scss";
 @import "../../assets/fonts/SofiaPro/stylesheet.scss";
 //Todo: clean fonts
+@import "variables";
 
 body {
   font-family: 'Sofia Pro';
@@ -9,8 +10,57 @@ body {
 }
 
 a {
-  color: #0b0b0b;
+  color: $main-font-color;
   text-decoration: none;
+}
+
+h1, h2, h3 {
+  font-family: 'Futura PT Book';
+}
+
+h2 {
+  letter-spacing: 0.5em;
+}
+
+.aboveheading {
+  margin-bottom: -15px;
+  font-size: 11px;
+  letter-spacing: 9px;
+}
+
+.maintext {
+  text-transform: none;
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+}
+
+.doubleborder-btn {
+  all: unset;
+  margin: 20px 0;
+  display: block;
+  cursor: pointer;
+  background: transparent;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  padding: 15px 40px 5px 30px;
+  border: 2px solid $main-font-color;
+  transition-duration: 1.6s;
+  &:hover, &:focus {
+    box-shadow: inset 3px 4px 0 3px $main-font-color, 7px 8px 0 -1px $main-font-color;
+  }
+  &:before {
+    display: block;
+    position: absolute;
+    content: ' ';
+    width: 179px;
+    height: 33px;
+    margin-top: -9px;
+    margin-left: -25px;
+    padding: 0;
+    border: 2px solid $main-font-color;
+  }
 }
 
 .header {
@@ -24,11 +74,12 @@ a {
         display: inline;
         list-style-type: none;
         margin: 15px;
-        letter-spacing: 2px;
+        letter-spacing: 3px;
         a {
-          font-size: 12px;
+          font-size: 9px;
+          transition-duration: 0.4s;
           &:hover {
-            font-weight: 600;
+            font-size: 12px;
           }
         }
       }
@@ -41,12 +92,162 @@ a {
     width: 50%;
     padding-right: 40px;
     &-cart {
+      font-size: 9px;
       span {
-        border: 1px solid black;
+        border: 1px solid $main-font-color;
         border-radius: 100%;
-        padding: 5px 11px;
+        padding: 5px 11px 6px;
         margin-left: 10px;
+        font-size: 12px;
+        font-weight: 600;
       }
+    }
+  }
+}
+
+.firstscreen {
+  z-index: 0;
+  background: url("/assets/img/rectangle_4@2x.jpg") no-repeat left;
+  background-size: 70% 100%;
+  margin-bottom: 60px;
+  &:before {
+    display: block;
+    position: absolute;
+    content: ' ';
+    background: $transparent-peach-color;
+    width: 70%;
+    height: 94%;
+    margin-top: 30px;
+    margin-left: 30px;
+    padding: 0;
+  }
+  &__content {
+    display: flex;
+    align-items: center;
+  }
+  &__slider {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 50%;
+    z-index: 150;
+
+    &-images {
+      width: 65%;
+      img {
+        width: 90%;
+        transition-duration: 1s;
+      }
+    }
+
+    &-selectors {
+      p {
+        font-size: 9px;
+        margin: 40px 0;
+        font-weight: 600;
+        letter-spacing: 3px;
+        transition-duration: 0.5s;
+        cursor: pointer;
+        &:hover {
+          -webkit-transform: scale(1.33);
+          -moz-transform: scale(1.33);
+          -ms-transform: scale(1.33);
+          -o-transform: scale(1.33);
+          transform: scale(1.33);
+        }
+      }
+      .active {
+        @keyframes smoothFadeIn {
+          0% {width: 0;}
+          100% {width: 260px;}
+        }
+        &:before {
+          content: '';
+          width: 260px;
+          right: 3%;
+          margin-top: 15px;
+          position: absolute;
+          height: 0;
+          border-bottom: 2px solid #0b0b0b;
+          animation: smoothFadeIn 0.5s;
+        }
+      }
+    }
+  }
+  &__info {
+    width: 60%;
+    z-index: 100;
+    section {
+      max-width: 420px;
+      padding-left: 15%;
+      margin: 35vh 0;
+      h2 {
+        width: 90%;
+      }
+    }
+    &-form {
+      display: flex;
+      justify-content: space-between;
+      select {
+        all: unset;
+        padding: 10px 100px 5px 20px;
+        border-bottom: 1px solid $main-font-color;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 4px;
+        background: url("/assets/img/angle-down.png") no-repeat center right;
+      }
+      input[type="number"] {
+        all: unset;
+        width: 25px;
+        padding: 0 5px;
+        text-align: center;
+        -moz-appearance: textfield;
+        &::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          margin: 0;
+        }
+        &::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          margin: 0;
+        }
+      }
+      &_quantity {
+        margin-right: 20px;
+        button {
+          all: unset;
+          border: 1px solid #0b0b0b;
+          border-radius: 20px;
+          padding: 2px 11px 7px;
+          cursor: pointer;
+          transition-duration: 0.4s;
+          &:hover {
+            background: #fff;
+            border: 1px solid transparent;
+          }
+        }
+      }
+    }
+  }
+  &__links {
+    display: flex;
+    justify-content: space-between;
+    a {
+      margin-left: 20px;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 3px;
+    }
+    &-left {
+      margin: -80px 40px;
+      z-index: 100;
+    }
+    &-right {
+      margin: -80px 40px;
     }
   }
 }

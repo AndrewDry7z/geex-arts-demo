@@ -30,36 +30,48 @@
 </header>
 <main>
     <div class="firstscreen">
-        <section class="firstscreen__info">
-            <p class="aboveheading">Collection</p>
-            <h2>Bikini — Mykonos</h2>
-            <p class="maintext">
-                The same top on the line accessories you're used to but we have formulated these specifically for
-                your activite lifestyle.
-            </p>
-            <div class="firstscreen__info-select">
-                <form action="#">
-                    <select name="color" required title="quantity">
-                        <option>Pick a color</option>
-                    </select>
-                    <input type="number" name="quantity" value="1" title="quantity">
-                    <button type="submit">Add to cart</button>
-                </form>
+        <div class="firstscreen__content">
+            <div class="firstscreen__info">
+                <section>
+                    <p class="aboveheading">Collection</p>
+                    <h2>Bikini — Mykonos</h2>
+                    <p class="maintext">
+                        The same top on the line accessories you're used to but we have formulated these specifically
+                        for
+                        your activite lifestyle.
+                    </p>
+                    <div class="firstscreen__info-select">
+                        <form action="#" class="js-firstscreen-form">
+                            <div class="firstscreen__info-form">
+                                <select name="color" required title="quantity">
+                                    <option>Pick a color</option>
+                                </select>
+                                <div class="firstscreen__info-form_quantity">
+                                    <button id="js-firstscreen-form-decrease" type="button"> -</button>
+                                    <input id="js-firstscreen-form-number" type="number" name="quantity" value="1"
+                                           title="quantity" disabled>
+                                    <button id="js-firstscreen-form-increase" type="button"> +</button>
+                                </div>
+                            </div>
+                            <button type="submit" class="doubleborder-btn">Add to cart</button>
+                        </form>
+                    </div>
+                </section>
             </div>
-        </section>
-        <div class="firstscreen__slider">
-            <div class="firstscreen__slider-images">
-                <img src="/assets/img/rectangle_5.jpg" alt="Bikini — Mykonos">
-                <img src="/assets/img/rectangle_2@2x.jpg" alt="Bikini — Mykonos">
-                <img src="/assets/img/rectangle_3.jpg" alt="Bikini — Mykonos">
-            </div>
-            <div class="firstscreen__slider-selectors">
-                <p>img 001</p>
-                <p>img 002</p>
-                <p>img 003</p>
+            <div class="firstscreen__slider">
+                <div class="firstscreen__slider-images">
+                    <img src="/assets/img/rectangle_2@2x.jpg" alt="Bikini — Mykonos" style="display: none;">
+                    <img src="/assets/img/rectangle_5.jpg" alt="Bikini — Mykonos">
+                    <img src="/assets/img/rectangle_3.jpg" alt="Bikini — Mykonos" style="display: none;">
+                </div>
+                <div class="firstscreen__slider-selectors">
+                    <p>img 001</p>
+                    <p class="active">img 002</p>
+                    <p>img 003</p>
+                </div>
             </div>
         </div>
-        <div class="firtscreen__links">
+        <div class="firstscreen__links">
             <div class="firstscreen__links-left">
                 <a href="#">About this item</a>
                 <a href="#">Similar items</a>
