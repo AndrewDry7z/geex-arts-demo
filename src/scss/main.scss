@@ -376,4 +376,47 @@ h2 {
   }
 }
 
+.footer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  &__menu {
+    width: 50%;
+    text-align: center;
+    li {
+      display: inline;
+      list-style-type: none;
+      margin: 15px;
+      letter-spacing: 4px;
+      a {
+        font-size: 10px;
+        font-weight: 600;
+      }
+    }
+  }
+  &__about {
+    width: 20%;
+    &-companyname {
+      font-family: 'Futura PT Book';
+      font-size: 21px;
+      letter-spacing: 8px;
+      font-weight: 600;
+      margin-bottom: -15px;
+    }
+    &-copyright {
+      font-size: 12px;
+      font-weight: 300;
+      color: #777;
+      text-transform: none;
+    }
+  }
+  &__socials {
+    width: 20%;
+    text-align: right;
+    a {
+      margin: 30px;
+    }
+  }
+}
+
 @import "exceptions";
