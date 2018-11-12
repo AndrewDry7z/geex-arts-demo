@@ -46,10 +46,7 @@ h2 {
   letter-spacing: 4px;
   padding: 15px 40px 5px 30px;
   border: 2px solid $main-font-color;
-  transition-duration: 1.6s;
-  &:hover, &:focus {
-    box-shadow: inset 3px 4px 0 3px $main-font-color, 7px 8px 0 -1px $main-font-color;
-  }
+
   &:before {
     display: block;
     position: absolute;
@@ -111,6 +108,7 @@ h2 {
   background-size: 70% 100%;
   margin-bottom: 60px;
   &:before {
+    //fixme
     display: block;
     position: absolute;
     content: ' ';
@@ -241,6 +239,14 @@ h2 {
       font-size: 9px;
       font-weight: 600;
       letter-spacing: 3px;
+      -webkit-transition-duration: 0.4s;
+      -moz-transition-duration: 0.4s;
+      -ms-transition-duration: 0.4s;
+      -o-transition-duration: 0.4s;
+      transition-duration: 0.4s;
+      &:hover {
+        font-size: 12px;
+      }
     }
     &-left {
       margin: -80px 40px;
@@ -248,6 +254,26 @@ h2 {
     }
     &-right {
       margin: -80px 40px;
+    }
+  }
+}
+
+.separated-block {
+  display: flex;
+  section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 40%;
+  }
+  &__center {
+    text-align: center;
+    width: 10%;
+    p {
+      transform: rotate(-90deg);
+      font-size: 32px;
+      width: auto;
+      margin: auto -100px;
     }
   }
 }
