@@ -286,6 +286,8 @@ h2 {
       font-size: 32px;
       width: auto;
       margin: auto -300px;
+      letter-spacing: 15px;
+      font-weight: 500;
       &:before {
         content: '';
         width: 260px;
@@ -359,6 +361,18 @@ h2 {
       margin: 0 auto 200px;
     }
     margin: auto;
+    .maintext {
+      line-height: 2;
+    }
+    ul {
+      list-style-type: none;
+      li {
+        &:before {
+          content: '—';
+          padding-right: 5px;
+        }
+      }
+    }
   }
 }
 
