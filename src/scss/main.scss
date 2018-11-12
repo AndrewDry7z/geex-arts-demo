@@ -114,7 +114,7 @@ h2 {
     content: ' ';
     background: $transparent-peach-color;
     width: 70%;
-    height: 94%;
+    height: 90%;
     margin-top: 30px;
     margin-left: 30px;
     padding: 0;
@@ -156,8 +156,12 @@ h2 {
       }
       .active {
         @keyframes smoothFadeIn {
-          0% {width: 0;}
-          100% {width: 260px;}
+          0% {
+            width: 0;
+          }
+          100% {
+            width: 260px;
+          }
         }
         &:before {
           content: '';
@@ -265,15 +269,97 @@ h2 {
     flex-direction: column;
     justify-content: space-between;
     width: 40%;
+    margin: auto;
+    div {
+      height: 50%;
+    }
+    img {
+      max-width: 420px;
+    }
   }
   &__center {
     text-align: center;
-    width: 10%;
+    width: 4%;
+    margin: auto 0;
     p {
       transform: rotate(-90deg);
       font-size: 32px;
       width: auto;
-      margin: auto -100px;
+      margin: auto -300px;
+      &:before {
+        content: '';
+        width: 260px;
+        right: -50%;
+        margin-top: 20px;
+        position: absolute;
+        height: 0;
+        border-bottom: 2px solid #0b0b0b;
+      }
+      &:after {
+        content: '';
+        width: 260px;
+        right: 110%;
+        margin-top: 20px;
+        position: absolute;
+        height: 0;
+        border-bottom: 2px solid #0b0b0b;
+      }
+    }
+    span {
+      z-index: -1;
+      position: relative;
+      margin-left: -350px;
+      padding: 160px 777px 250px;
+      background: $transparent-peach-color;
+
     }
   }
+  &__imageblock {
+    img {
+      z-index: 1;
+    }
+    &:nth-of-type(odd) {
+      margin: 0 auto 500px;
+      &:after {
+        display: block;
+        position: absolute;
+        content: ' ';
+        padding: 0;
+        background: url(/assets/img/rectangle-4.jpg) no-repeat bottom left;
+        background-size: 100%;
+        width: 420px;
+        height: 140%;
+        margin-top: -1110px;
+        margin-left: 50px;
+        z-index: -2;
+      }
+    }
+    &:nth-of-type(even) {
+      margin: 500px auto 0;
+      &:before {
+        background: url(/assets/img/rectangle_4.jpg) no-repeat bottom right 0px;
+        margin-top: -50px;
+        margin-left: -50px;
+        display: block;
+        position: absolute;
+        content: ' ';
+        padding: 0;
+        background-size: 260%;
+        width: 420px;
+        height: 77%;
+        z-index: -2;
+      }
+    }
+  }
+  &__textblock {
+    &:nth-of-type(odd) {
+      margin: 200px auto 0;
+    }
+    &:nth-of-type(even) {
+      margin: 0 auto 200px;
+    }
+    margin: auto;
+  }
 }
+
+@import "exceptions";
