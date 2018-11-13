@@ -57,7 +57,7 @@ function initSlider() {
 
     tns({
         container: '.slider',
-        mode: 'carousel', // or 'gallery'
+        mode: 'gallery', // or 'gallery'
         axis: 'horizontal', // or 'vertical'
         items: 3,
         gutter: 0,
@@ -71,7 +71,7 @@ function initSlider() {
         navContainer: false,
         navAsThumbnails: false,
         arrowKeys: true,
-        speed: 100,
+        speed: 1000,
         loop: true,
         rewind: false,
         autoHeight: false,
