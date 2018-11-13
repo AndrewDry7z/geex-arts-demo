@@ -1,6 +1,5 @@
 import {fadeIn, fadeOut} from "./fade.js";
-
-'fade.js';
+import {tns} from "./tiny-slider";
 
 function changeQuantityValue() {
     let arrowMinus = document.getElementById('js-firstscreen-form-decrease'),
@@ -54,6 +53,47 @@ function changeFirstScreenImages() {
     })
 }
 
+function initSlider() {
+
+    tns({
+        container: '.slider',
+        mode: 'carousel', // or 'gallery'
+        axis: 'horizontal', // or 'vertical'
+        items: 3,
+        gutter: 0,
+        edgePadding: 0,
+        fixedWidth: false,
+        slideBy: 1,
+        controls: true,
+        controlsText: ['prev', 'next'],
+        controlsContainer: false,
+        nav: false,
+        navContainer: false,
+        navAsThumbnails: false,
+        arrowKeys: false,
+        speed: 300,
+        autoplay: false,
+        autoplayTimeout: 5000,
+        autoplayDirection: 'forward',
+        autoplayText: ['start', 'stop'],
+        autoplayHoverPause: false,
+        autoplayButton: false,
+        autoplayButtonOutput: true,
+        autoplayResetOnVisibility: true,
+        loop: true,
+        rewind: false,
+        autoHeight: false,
+        responsive: false,
+        lazyload: false,
+        touch: true,
+        mouseDrag: true,
+        swipeAngle: 15,
+        nested: false,
+        freezable: true,
+        onInit: false
+    });
+}
+
 changeQuantityValue();
 changeFirstScreenImages();
-
+initSlider();
