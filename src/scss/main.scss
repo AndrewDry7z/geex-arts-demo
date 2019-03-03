@@ -2,6 +2,7 @@
 @import "../../assets/fonts/FuturaPT/stylesheet.scss";
 @import "../../assets/fonts/SofiaPro/stylesheet.scss";
 //Todo: clean fonts
+@import "keyframes";
 @import "variables";
 @import "tiny-slider";
 
@@ -156,14 +157,6 @@ h2 {
         }
       }
       .active {
-        @keyframes smoothFadeIn {
-          0% {
-            width: 0;
-          }
-          100% {
-            width: 260px;
-          }
-        }
         &:before {
           content: '';
           width: 260px;
@@ -172,7 +165,7 @@ h2 {
           position: absolute;
           height: 0;
           border-bottom: 2px solid #0b0b0b;
-          animation: smoothFadeIn 0.5s;
+          animation: dynamicWidth 0.5s;
         }
       }
     }
@@ -405,13 +398,25 @@ h2 {
         -ms-transform: rotate(-90deg);
         -o-transform: rotate(-90deg);
         transform: rotate(-90deg);
+        &[data-controls="prev"] {
+          width: 85px;
+          height: 100px;
+          margin-top: 20%;
+        }
+        &[data-controls="next"] {
+          width: 85px;
+          height: 100px;
+          margin-top: 20%;
+        }
       }
     }
     .slider {
       .tns-item {
         &[aria-hidden="false"] {
           img {
-            max-width: 100%;
+            max-width: 80%;
+            margin: auto;
+            display: block;
           }
           &:not(:nth-child(3n-1)) {
             img {
@@ -426,6 +431,16 @@ h2 {
           }
         }
       }
+      .tns-slide-active {
+        .related-items__slider-text {
+          -webkit-animation: smoothFadeIn 1.5s;
+          -o-animation: smoothFadeIn 1.5s;
+          animation: smoothFadeIn 1.5s;
+        }
+      }
+    }
+    &-text {
+      text-align: center;
     }
   }
 
@@ -475,3 +490,4 @@ h2 {
 }
 
 @import "exceptions";
+@import "normalize";
